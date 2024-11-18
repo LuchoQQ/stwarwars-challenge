@@ -1,6 +1,26 @@
 const Footer = () => {
+    type List = {
+        title: string;
+        to: string;
+    };
+
+    const list: List[] = [
+        {
+            title: "INICIO",
+            to: "/",
+        },
+        {
+            title: "INFO",
+            to: "/info",
+        },
+        {
+            title: "Nosotros",
+            to: "/about",
+        },
+    ];
+
     return (
-        <footer className="bg-neutral-950 text-white py-8">
+        <footer className="bg-neutral-950 text-white py-8 relative">
             <div className="container mx-auto px-6">
                 <div className="flex flex-col sm:flex-row justify-between items-center">
                     <div className="mb-4 sm:mb-0">
@@ -8,18 +28,18 @@ const Footer = () => {
                     </div>
 
                     <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-8">
-                        <a href="#home" className="hover:text-yellow-400">
-                            Home
-                        </a>
-                        <a href="#about" className="hover:text-yellow-400">
-                            About
-                        </a>
-                        <a href="#contact" className="hover:text-yellow-400">
-                            Contact
-                        </a>
-                        <a href="#privacy" className="hover:text-yellow-400">
-                            Privacy
-                        </a>
+                        {list.map((item: List) => {
+                            return (
+                                <>
+                                    <a
+                                        href={item.to}
+                                        className="hover:text-red-400 transition-colors font-poppins text-base"
+                                    >
+                                        {item.title}
+                                    </a>
+                                </>
+                            );
+                        })}
                     </div>
 
                     <div className="flex space-x-6">

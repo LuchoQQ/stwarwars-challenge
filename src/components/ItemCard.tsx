@@ -7,7 +7,7 @@ interface ItemCardProps {
     onOpenModal: () => void;
 }
 
-const ItemCard: React.FC<ItemCardProps> = ({ item, category, onOpenModal }) => {
+const ItemCard: React.FC<ItemCardProps> = ({ item, onOpenModal }) => {
     return (
         <div className="border p-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
             <h3 className="text-xl font-semibold mb-2">{item.name}</h3>

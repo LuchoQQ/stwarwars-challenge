@@ -1,6 +1,5 @@
 const Hero = () => {
     return (
-        <div>
             <div
                 id="hero"
                 className="relative overflow-hidden bg-cover bg-center h-screen flex items-center justify-center"
@@ -31,7 +30,6 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-        </div>
     );
 };
 export default Hero;

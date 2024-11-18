@@ -26,16 +26,13 @@ const SidebarLayout: React.FC<SidebarProps> = ({
             {/* Fondo oscuro al abrir el menú en móvil */}
             {isOpen && (
                 <div
-                    className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-10"
+                    className="lg:hidden fixed inset-0 bg-black bg-opacity-50 z-10 h-100"
                     onClick={toggleSidebar}
                 ></div>
             )}
-
             <nav
-                className={`fixed top-0 left-0 w-64 min-h-screen p-4 bg-white drop-shadow-lg transition-transform duration-300 ease-in-out z-20
-          ${
-              isOpen ? "translate-x-0" : "-translate-x-full"
-          } lg:translate-x-0 lg:static`}
+                className={`fixed top-0 left-0 w-64 h-full lg:static lg:h-auto flex flex-col bg-white shadow-lg transition-transform duration-300 ease-in-out z-20 px-4
+    ${isOpen ? "translate-x-0" : "-translate-x-full"} lg:translate-x-0`}
             >
                 {/* Botón de cierre en vista móvil */}
                 <button

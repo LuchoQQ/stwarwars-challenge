@@ -27,7 +27,7 @@ export const CardsSection = () => {
             <h2 className="text-center text-4xl mb-10 text-transparent tracking-[1rem] [-webkit-text-stroke:1px_red] font-starwars">
                 MAS DE STARWARS
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 mt-24">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-24">
                 {characters.map((character, index) => (
                     <Card
                         title={character.name}

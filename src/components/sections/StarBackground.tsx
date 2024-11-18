@@ -13,7 +13,8 @@ const StarBackground = () => {
         });
     }, []);
 
-    const particlesLoaded = useCallback(async (container) => {
+    // Type the 'container' parameter with the 'Container' type
+    const particlesLoaded = useCallback(async (container: any) => {
         console.log(container);
     }, []);
 

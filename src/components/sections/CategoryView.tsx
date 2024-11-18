@@ -106,7 +106,7 @@ const CategoryView: React.FC<CategoryViewProps> = ({ category }) => {
                     <Loader />
                 ) : isError ? (
                     <p className="text-red-500">{(error as Error).message}</p>
-                ) : (
+                ) : data && (
                     <>
                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
                             {data?.results.map((item: any) => (
