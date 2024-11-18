@@ -7,6 +7,7 @@ import {
 import HomePage from "./components/pages/HomePage";
 import InfoPage from "./components/pages/InfoPage";
 import CategoryView from "./components/sections/CategoryView";
+import NotFound from "./components/pages/NotFound";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 const queryClient = new QueryClient();
@@ -35,7 +36,8 @@ export default function App() {
                             element={<CategoryView category="starships" />}
                         />
                     </Route>
-                    <Route path="/about-us" element={<HomePage />} />
+                    {/* Ruta fallback para páginas no encontradas */}
+                    <Route path="*" element={<NotFound />} />
                 </Routes>
             </Router>
         </QueryClientProvider>

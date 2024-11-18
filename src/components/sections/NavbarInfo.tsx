@@ -1,4 +1,5 @@
 import { Menu } from "lucide-react";
+import NavbarItems from "../NavbarItems";
 
 interface NavbarInfoProps {
   toggleSidebar: () => void;
@@ -18,15 +19,7 @@ const NavbarInfo: React.FC<NavbarInfoProps> = ({ toggleSidebar }) => {
       <img src="/starwarswhite.png" width={100} alt="Star Wars Logo" />
       
       <ul className="hidden lg:flex space-x-8 text-lg opacity-60 ml-auto pr-10">
-        <li>
-          <a href="/" className="hover:text-yellow-400 transition-colors font-poppins text-white">INICIO</a>
-        </li>
-        <li>
-          <a href="/info" className="hover:text-yellow-400 transition-colors font-poppins text-white">INFO</a>
-        </li>
-        <li>
-          <a href="/about" className="hover:text-yellow-400 transition-colors font-poppins text-white">ABOUT US</a>
-        </li>
+       <NavbarItems section="info"/>
       </ul>
     </div>
   );

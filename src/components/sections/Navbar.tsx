@@ -1,6 +1,7 @@
 import "@fontsource/poppins/600.css";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import NavbarItems from "../NavbarItems";
 
 const Navbar = () => {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -21,7 +22,7 @@ const Navbar = () => {
                 />
 
                 {/* Desktop Menu */}
-                <ul className="hidden md:flex space-x-8 text-lg opacity-60">
+               {/*  <ul className="hidden md:flex space-x-8 text-lg opacity-60">
                     <li>
                         <a
                             href="/"
@@ -46,7 +47,8 @@ const Navbar = () => {
                             ABOUT US
                         </a>
                     </li>
-                </ul>
+                </ul> */}
+                <NavbarItems section="hero"/>
 
                 {/* Mobile Menu Toggle */}
                 <button
@@ -61,35 +63,9 @@ const Navbar = () => {
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
                 <div className="md:hidden bg-black bg-opacity-80">
-                    <ul className="flex flex-col items-center space-y-4 text-lg py-4 opacity-60">
-                        <li>
-                            <a
-                                href="/"
-                                className="text-white hover:text-yellow-400 transition-colors font-poppins text-base"
-                                onClick={toggleMobileMenu}
-                            >
-                                INICIO
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="/info"
-                                className="text-white hover:text-yellow-400 transition-colors font-poppins text-base"
-                                onClick={toggleMobileMenu}
-                            >
-                                INFO
-                            </a>
-                        </li>
-                        <li>
-                            <a
-                                href="/about"
-                                className="text-white hover:text-yellow-400 transition-colors font-poppins text-base"
-                                onClick={toggleMobileMenu}
-                            >
-                                ABOUT US
-                            </a>
-                        </li>
-                    </ul>
+                    <div className="flex flex-col items-center space-y-4 text-lg py-4 opacity-60">
+                        <NavbarItems section="footer"/>
+                    </div>
                 </div>
             )}
         </nav>

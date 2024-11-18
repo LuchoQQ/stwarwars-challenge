@@ -50,7 +50,7 @@ const SidebarLayout: React.FC<SidebarProps> = ({
                         <li>
                             <a
                                 href="/"
-                                className="hover:text-yellow-400 transition-colors font-poppins text-black"
+                                className="hover:text-red-400 transition-colors font-poppins text-black"
                             >
                                 INICIO
                             </a>
@@ -58,7 +58,7 @@ const SidebarLayout: React.FC<SidebarProps> = ({
                         <li>
                             <a
                                 href="/info"
-                                className="hover:text-yellow-400 transition-colors font-poppins text-black"
+                                className="hover:text-red-400 transition-colors font-poppins text-black"
                             >
                                 INFO
                             </a>
@@ -66,9 +66,9 @@ const SidebarLayout: React.FC<SidebarProps> = ({
                         <li>
                             <a
                                 href="/about"
-                                className="hover:text-yellow-400 transition-colors font-poppins text-black"
+                                className="hover:text-red-400 transition-colors font-poppins text-black"
                             >
-                                ABOUT US
+                                NOSOTROS
                             </a>
                         </li>
                     </ul>

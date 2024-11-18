@@ -1,24 +1,7 @@
+import { Facebook, Instagram, Twitter } from "lucide-react";
+import NavbarItems from "../NavbarItems";
+
 const Footer = () => {
-    type List = {
-        title: string;
-        to: string;
-    };
-
-    const list: List[] = [
-        {
-            title: "INICIO",
-            to: "/",
-        },
-        {
-            title: "INFO",
-            to: "/info",
-        },
-        {
-            title: "Nosotros",
-            to: "/about",
-        },
-    ];
-
     return (
         <footer className="bg-neutral-950 text-white py-8 relative">
             <div className="container mx-auto px-6">
@@ -27,45 +10,32 @@ const Footer = () => {
                         <h2 className="text-2xl font-bold">Manosos SPA</h2>
                     </div>
 
-                    <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-8">
-                        {list.map((item: List) => {
-                            return (
-                                <>
-                                    <a
-                                        href={item.to}
-                                        className="hover:text-red-400 transition-colors font-poppins text-base"
-                                    >
-                                        {item.title}
-                                    </a>
-                                </>
-                            );
-                        })}
-                    </div>
+                    <NavbarItems section="footer" />
 
                     <div className="flex space-x-6">
                         <a
                             href="https://facebook.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:text-yellow-400"
+                            className="text-gray-400 hover:text-red-400 transition-colors"
                         >
-                            <i className="fab fa-facebook-f"></i>
+                            <Facebook size={24} />
                         </a>
                         <a
                             href="https://twitter.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:text-yellow-400"
+                            className="text-gray-400 hover:text-red-400 transition-colors"
                         >
-                            <i className="fab fa-twitter"></i>
+                            <Twitter size={24} />
                         </a>
                         <a
                             href="https://instagram.com"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="hover:text-yellow-400"
+                            className="text-gray-400 hover:text-red-400 transition-colors"
                         >
-                            <i className="fab fa-instagram"></i>
+                            <Instagram size={24} />
                         </a>
                     </div>
                 </div>
