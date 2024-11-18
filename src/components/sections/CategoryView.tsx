@@ -108,7 +108,7 @@ const CategoryView: React.FC<CategoryViewProps> = ({ category }) => {
                 item={selectedItem}
                 category={category}
             />
-            <div className="mt-14 sm:mt-0 p-4 bg-white drop-shadow-sm rounded-sm">
+            <section className="mt-14 sm:mt-0 p-4 bg-white drop-shadow-sm rounded-sm">
                 <div className="flex  items-center mb-4">
                     <h2 className="text-2xl font-bold capitalize mr-14 tracking-[.1em]">
                         {categoryName()}
@@ -248,7 +248,7 @@ const CategoryView: React.FC<CategoryViewProps> = ({ category }) => {
                         </>
                     )
                 )}
-            </div>
+            </section>
         </>
     );
 };

@@ -6,12 +6,12 @@ export const CardsSection = () => {
     const characters = [
         {
             name: "PERSONAJES",
-            image: "/cards/troopers.png",
+            image: "/cards/troopers.webp",
             url: "/info/people",
         },
         {
             name: "PLANETAS",
-            image: "/cards/planets.jpeg",
+            image: "/cards/planets.webp",
             url: "/info/planets",
         },
         {
@@ -21,7 +21,7 @@ export const CardsSection = () => {
         },
     ];
     return (
-        <div
+        <section
             id="characters"
             className="container mx-auto px-4 py-16 w-full md:w-11/12 lg:w-10/12 mt-16 min-h-[70vh]"
         >
@@ -38,7 +38,7 @@ export const CardsSection = () => {
                     />
                 ))}
             </div>
-        </div>
+        </section>
     );
 };
 

@@ -15,7 +15,7 @@ const Navbar = () => {
             <div className="container mx-auto px-4 py-4 flex items-center justify-between">
                 {/* Logo */}
                 <img
-                    src="/starwarswhite.png"
+                    src="/starwarswhite.webp"
                     width={100}
                     className="opacity-60"
                     alt="Logo"

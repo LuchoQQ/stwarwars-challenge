@@ -1,5 +1,3 @@
-"use client";
-
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
@@ -24,7 +22,7 @@ export default function Card({ title, imageSrc, target }: CardProps) {
                 <div className="h-[200px] overflow-hidden">
                     <motion.img
                         src={imageSrc}
-                        alt={title}
+                        alt={`Imagen representativa de ${title}`}
                         className="w-full h-full object-contain"
                         initial={{ scale: 1 }}
                         animate={{ scale: isHovered ? 1.05 : 1 }}

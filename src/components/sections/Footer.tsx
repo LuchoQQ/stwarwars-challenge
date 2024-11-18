@@ -18,6 +18,8 @@ const Footer = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-gray-400 hover:text-red-400 transition-colors"
+                            aria-label="Visitar Facebook"
+                            title="Visitar Facebook"
                         >
                             <Facebook size={24} />
                         </a>
@@ -26,6 +28,8 @@ const Footer = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-gray-400 hover:text-red-400 transition-colors"
+                            aria-label="Visitar Twitter"
+                            title="Visitar Twitter"
                         >
                             <Twitter size={24} />
                         </a>
@@ -34,6 +38,8 @@ const Footer = () => {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="text-gray-400 hover:text-red-400 transition-colors"
+                            aria-label="Visitar Instagram"
+                            title="Visitar Instagram"
                         >
                             <Instagram size={24} />
                         </a>
@@ -41,7 +47,7 @@ const Footer = () => {
                 </div>
 
                 <div className="mt-8 text-center text-sm">
-                    <p>&copy; 2024 Star Wars Info. All rights reserved.</p>
+                    <p>&copy; 2024 Manosos SPA. All rights reserved.</p>
                 </div>
             </div>
         </footer>
