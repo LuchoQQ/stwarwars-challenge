@@ -1,10 +1,6 @@
 import React, { useEffect } from "react";
 import { useQuery } from "@tanstack/react-query";
 import {
-    ChevronLeft,
-    ChevronRight,
-    ChevronsLeft,
-    ChevronsRight,
     Table,
     Layout,
 } from "lucide-react";
@@ -104,11 +100,6 @@ const CategoryView: React.FC<CategoryViewProps> = ({ category }) => {
 
     const [showModal, setShowModal] = React.useState(false);
     const [selectedItem, setSelectedItem] = React.useState(null);
-
-    const openModal = (item: any) => {
-        setSelectedItem(item);
-        setShowModal(true);
-    };
 
     const closeModal = () => {
         setShowModal(false);

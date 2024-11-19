@@ -1,7 +1,17 @@
 import { Button } from "./ui/button";
 import { ChevronLeft, ChevronRight, ChevronsLeft, ChevronsRight } from "lucide-react";
 
-const Paginado = ({data, handlePageChange, currentPage, totalPages, itemsPerPage, debouncedSearch}) => {
+type Props = {
+    data: any,
+    handlePageChange: (number: number) => void
+    currentPage: number,
+    totalPages: number,
+    itemsPerPage: number,
+    debouncedSearch: string
+}
+
+
+const Paginado: React.FC<Props> = ({data, handlePageChange, currentPage, totalPages, itemsPerPage, debouncedSearch}) => {
     return (
         <>
             {data?.count > 0 && (
