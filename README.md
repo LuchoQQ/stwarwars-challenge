@@ -64,5 +64,4 @@ CARACTERÍSTICAS DE LA PLATAFORMA
     - Clases utilitarias que facilitan el mantenimiento
 
 Resumen de la métrica
-
-![Alt text](https://prod-files-secure.s3.us-west-2.amazonaws.com/4df220a8-5cd8-4aa4-bae7-6c619e1cc91f/41bb3133-8f0e-4481-b05d-2470476bd225/image.png)
+![Alt text](https://asset.cloudinary.com/diylksocz/c7d9c1c4b6ff368b09b7668269f18cab)
