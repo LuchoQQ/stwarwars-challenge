@@ -63,5 +63,5 @@ CARACTERÍSTICAS DE LA PLATAFORMA
     - Desarrollo más rápido
     - Clases utilitarias que facilitan el mantenimiento
 
-Resumen de la métrica
-![Alt text](https://asset.cloudinary.com/diylksocz/c7d9c1c4b6ff368b09b7668269f18cab)
+Resumen del análisis de la página
+https://asset.cloudinary.com/diylksocz/c7d9c1c4b6ff368b09b7668269f18cab
