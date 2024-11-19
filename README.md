@@ -1,50 +1,67 @@
-# React + TypeScript + Vite
+REQUISITOS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+1. Tener la última versión de Node.js instalado
+2. Tener GIT instalado
 
-Currently, two official plugins are available:
+PASOS PARA LEVANTAR EL PROYECTO (sin el .zip)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+*** En caso de bajar de GITHUB
 
-## Expanding the ESLint configuration
+1. Abrir la consola con WINDOWS + R
+2. Insertar el siguiente comando “git clone https://github.com/LuchoQQ/stwarwars-challenge.git”
+3. Insertar el siguiente comando “cd stwarwars-challenge”
+4. Insertar el siguiente comando “npm  install” y esperar que termine
+5. Insertar el siguiente comando “npm run build” y esperar que termine
+6. Insertar el siguiente comando “npm run preview”
+7. Acceder al navegador a la siguiente URL “http://localhost:4173”
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+*** En caso de utilizar el comprimido
 
-- Configure the top-level `parserOptions` property like this:
+1. Extraer en el escritorio la carpeta del proyecto
+2. Click derecho y luego abrir en terminal.
+3. Insertar el siguiente comando “cd stwarwars-challenge”
+4. Insertar el siguiente comando “npm  install” y esperar que termine
+5. Insertar el siguiente comando “npm run build” y esperar que termine
+6. Insertar el siguiente comando “npm run preview”
+7. Acceder al navegador a la siguiente URL “http://localhost:4173”
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+CARACTERÍSTICAS DE LA PLATAFORMA
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+**1. Experiencia de Usuario y Diseño**
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- La adaptabilidad móvil (responsive design) demuestra tu preocupación por la accesibilidad
+- El carrusel de imágenes mejora la interactividad
+- La vista dual (tabla y cuadricular) ofrece flexibilidad al usuario
+- La navegación responsive y reutilizable mejora la experiencia de navegación
+- La página 404 personalizada muestra atención al detalle
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+**2. Rendimiento y Optimización**
+
+- La optimización de imágenes reduce el tiempo de carga y mejora la experiencia del usuario
+- La implementación de React Query con axios demuestra:
+    - Mejor manejo del estado de la aplicación
+    - Caché automático
+    - Optimización de solicitudes al servidor
+    - Preparación para escalar la aplicación
+
+**3. Funcionalidades Avanzadas**
+
+- Redirección a los residentes en categoría Planetas
+- Wiki con características completas:
+    - Categorización del contenido
+    - Buscador integrado
+    - Sistema de paginación
+    - Estas características demuestran la capacidad de manejar datos complejos
+
+**4. Aspectos Técnicos**
+
+- SEO mejorado para mejor visibilidad en buscadores
+- Imágenes optimizadas a formato WEBP
+- Uso de Tailwind CSS:
+    - Diseño consistente
+    - Desarrollo más rápido
+    - Clases utilitarias que facilitan el mantenimiento
+
+Resumen de la métrica
+
+(https://prod-files-secure.s3.us-west-2.amazonaws.com/4df220a8-5cd8-4aa4-bae7-6c619e1cc91f/41bb3133-8f0e-4481-b05d-2470476bd225/image.png)
