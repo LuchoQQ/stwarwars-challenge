@@ -13,8 +13,3 @@ const PeopleDetails = ({ item }: { item: any }) => {
 };
 
 export default PeopleDetails;
-
-
-
-
-// StarshipDetails.tsx

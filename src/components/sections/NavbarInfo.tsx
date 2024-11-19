@@ -16,7 +16,7 @@ const NavbarInfo: React.FC<NavbarInfoProps> = ({ toggleSidebar }) => {
         <Menu size={24} />
       </button>
 
-      <img src="/starwarswhite.png" width={100} alt="Star Wars Logo" />
+      <img src="/starwarswhite.webp" width={100} alt="Star Wars Logo" />
       
       <ul className="hidden lg:flex space-x-8 text-lg opacity-60 ml-auto pr-10">
        <NavbarItems section="info"/>

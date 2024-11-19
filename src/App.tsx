@@ -28,15 +28,26 @@ export default function App() {
                             element={<CategoryView category="people" />}
                         />
                         <Route
+                            path="people/:id"
+                            element={<CategoryView category="people" />}
+                        />
+                        <Route
                             path="planets"
+                            element={<CategoryView category="planets" />}
+                        />
+                        <Route
+                            path="planets/:id"
                             element={<CategoryView category="planets" />}
                         />
                         <Route
                             path="starships"
                             element={<CategoryView category="starships" />}
                         />
+                        <Route
+                            path="starships/:id"
+                            element={<CategoryView category="starships" />}
+                        />
                     </Route>
-                    {/* Ruta fallback para páginas no encontradas */}
                     <Route path="*" element={<NotFound />} />
                 </Routes>
             </Router>

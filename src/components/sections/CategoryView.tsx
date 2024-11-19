@@ -14,6 +14,8 @@ import ItemCard from "../ItemCard";
 import { Button } from "../ui/button";
 import Loader from "../Loader";
 import TableView from "../TableView";
+import Paginado from "../Paginado";
+import { useNavigate, useParams } from "react-router-dom";
 
 interface CategoryViewProps {
     category: string;
@@ -40,11 +42,14 @@ const fetchItems = async (
 };
 
 const CategoryView: React.FC<CategoryViewProps> = ({ category }) => {
+    const { id } = useParams<{ id: string }>(); // Obtener el ID de la URL
+    const navigate = useNavigate();
+
     const [search, setSearch] = React.useState("");
     const [currentPage, setCurrentPage] = React.useState(1);
     const [debouncedSearch, setDebouncedSearch] = React.useState("");
     const itemsPerPage = 10;
-    const [tableView, setTableView] = React.useState(true);
+    const [tableView, setTableView] = React.useState(false);
 
     useEffect(() => {
         setCurrentPage(1);
@@ -60,6 +65,27 @@ const CategoryView: React.FC<CategoryViewProps> = ({ category }) => {
 
         return () => clearTimeout(timer);
     }, [search]);
+
+    useEffect(() => {
+        if (id) {
+            const fetchSelectedItem = async () => {
+                try {
+                    const response = await fetch(
+                        `https://swapi.dev/api/${category}/${id}/`
+                    );
+                    if (!response.ok) {
+                        throw new Error("Error al cargar los datos del ítem.");
+                    }
+                    const data = await response.json();
+                    setSelectedItem(data);
+                    setShowModal(true);
+                } catch (error) {
+                    console.error(error);
+                }
+            };
+            fetchSelectedItem();
+        }
+    }, [id, category]);
 
     const { data, error, isLoading, isError } = useQuery({
         queryKey: ["items", category, currentPage, debouncedSearch],
@@ -87,18 +113,19 @@ const CategoryView: React.FC<CategoryViewProps> = ({ category }) => {
     const closeModal = () => {
         setShowModal(false);
         setSelectedItem(null);
+        navigate(`/info/${category}`); // Volver a la lista sin el ID en la URL
     };
 
-    let categoryName = () =>  {
-        switch(category) {
+    let categoryName = () => {
+        switch (category) {
             case "people":
                 return "personajes";
             case "planets":
-                return "planetas"
+                return "planetas";
             case "starships":
-                return "naves"
+                return "naves";
         }
-    }
+    };
 
     return (
         <>
@@ -152,9 +179,6 @@ const CategoryView: React.FC<CategoryViewProps> = ({ category }) => {
                                             key={item.url}
                                             item={item}
                                             category={category}
-                                            onOpenModal={() =>
-                                                openModal(item)
-                                            }
                                         />
                                     ))}
                                 </div>
@@ -165,86 +189,14 @@ const CategoryView: React.FC<CategoryViewProps> = ({ category }) => {
                                     {debouncedSearch}"
                                 </p>
                             )}
-                            {data?.count > 0 && (
-                                <div className="mt-6 flex flex-col items-center space-y-4">
-                                    <div className="flex items-center space-x-2">
-                                        <Button
-                                            variant="outline"
-                                            size="icon"
-                                            onClick={() => handlePageChange(1)}
-                                            disabled={currentPage === 1}
-                                            aria-label="Primera página"
-                                        >
-                                            <ChevronsLeft className="h-4 w-4" />
-                                        </Button>
-                                        <Button
-                                            variant="outline"
-                                            size="icon"
-                                            onClick={() =>
-                                                handlePageChange(
-                                                    currentPage - 1
-                                                )
-                                            }
-                                            disabled={currentPage === 1}
-                                            aria-label="Página anterior"
-                                        >
-                                            <ChevronLeft className="h-4 w-4" />
-                                        </Button>
-                                        <span className="mx-4 text-sm">
-                                            Página{" "}
-                                            <span className="font-medium">
-                                                {currentPage}
-                                            </span>{" "}
-                                            de{" "}
-                                            <span className="font-medium">
-                                                {totalPages}
-                                            </span>
-                                        </span>
-                                        <Button
-                                            variant="outline"
-                                            size="icon"
-                                            onClick={() =>
-                                                handlePageChange(
-                                                    currentPage + 1
-                                                )
-                                            }
-                                            disabled={
-                                                currentPage === totalPages
-                                            }
-                                            aria-label="Página siguiente"
-                                        >
-                                            <ChevronRight className="h-4 w-4" />
-                                        </Button>
-                                        <Button
-                                            variant="outline"
-                                            size="icon"
-                                            onClick={() =>
-                                                handlePageChange(totalPages)
-                                            }
-                                            disabled={
-                                                currentPage === totalPages
-                                            }
-                                            aria-label="Última página"
-                                        >
-                                            <ChevronsRight className="h-4 w-4" />
-                                        </Button>
-                                    </div>
-                                    <div className="text-sm text-gray-600">
-                                        Mostrando{" "}
-                                        {(currentPage - 1) * itemsPerPage + 1}-{" "}
-                                        {Math.min(
-                                            currentPage * itemsPerPage,
-                                            data?.count || 0
-                                        )}{" "}
-                                        de {data?.count} elementos
-                                        {debouncedSearch && (
-                                            <span className="ml-2">
-                                                (resultados filtrados)
-                                            </span>
-                                        )}
-                                    </div>
-                                </div>
-                            )}
+                            <Paginado
+                                data={data}
+                                handlePageChange={handlePageChange}
+                                currentPage={currentPage}
+                                totalPages={totalPages}
+                                itemsPerPage={itemsPerPage}
+                                debouncedSearch={debouncedSearch}
+                            />
                         </>
                     )
                 )}
